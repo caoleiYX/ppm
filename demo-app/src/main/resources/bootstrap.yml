@@ -1,0 +1,33 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: demo
+    clientId: ${spring.application.name}
+    alais: demo
+  cloud:
+    nacos:
+      locator:
+        enabled: true
+        lowerCaseServiceId: true
+      discovery:
+        enable: true
+        server-addr: ${NACOS_SERVER_ADDR:127.0.0.1:8848}
+        namespace: ${NACOS_CONFIG_NAMESPACE:erdcloud}
+        group: ${NACOS_CONFIG_GROUP:erdcloud}
+      config:
+        prefix: ${spring.application.name}
+        file-extension: yaml
+        server-addr: ${NACOS_SERVER_ADDR:127.0.0.1:8848}
+        namespace: ${NACOS_CONFIG_NAMESPACE:erdcloud}
+        group: ${NACOS_CONFIG_GROUP:erdcloud}
+        extension-configs:
+          - data-id: erdcloud.yaml
+            group: ${NACOS_CONFIG_GROUP:erdcloud}
+            refresh: true
+  main:
+    banner-mode: off
+management:
+  health:
+    mongo:
+      enabled: false

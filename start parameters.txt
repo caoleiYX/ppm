@@ -1,0 +1,37 @@
+Environment variables增加如下配置：
+
+env.database.read.host=127.0.0.1;
+env.database.read.name=erddb_project_dev;
+env.database.read1.host=127.0.0.1;
+env.database.read1.name=erddb_project_dev;
+env.database.write.host=127.0.0.1;
+env.database.write.name=erddb_project_dev;
+env.redis.host=127.0.0.1:6379;
+env.nacos.server.ip=127.0.0.1;
+env.nacos.service.namespace=erdcloud-service;
+NACOS_CONFIG_GROUP=erdcloud;
+NACOS_CONFIG_NAMESPACE=erdcloud;
+NACOS_SERVER_ADDR=127.0.0.1:8848;
+NACOS_SERVICE_NAMESPACE=erdcloud-service;
+spring.application.name={your name}-demo;
+
+shell
+
+export env.database.read.host=127.0.0.1
+export env.database.read.name=erddb_project_dev
+export env.database.read1.host=127.0.0.1
+export env.database.read1.name=erddb_project_dev
+export env.database.write.host=127.0.0.1
+export env.database.write.name=erddb_project_dev
+export env.redis.host=127.0.0.1:6379
+export env.nacos.server.ip=127.0.0.1
+export env.nacos.service.namespace=erdcloud-service
+export NACOS_CONFIG_GROUP=erdcloud
+export NACOS_CONFIG_NAMESPACE=erdcloud
+export NACOS_SERVER_ADDR=127.0.0.1:8848
+export NACOS_SERVICE_NAMESPACE=erdcloud-service
+export spring.application.name=demo
+
+nohup java -jar demo-app-1.0-SNAPSHOT.jar > log.file 2>&1 &
+
+ -Denv.database.read.host=127.0.0.1 -Denv.database.read.name=erddb_project_dev -Denv.database.read1.host=127.0.0.1 -Denv.database.read1.name=erddb_project_dev -Denv.database.write.host=127.0.0.1 -Denv.database.write.name=erddb_project_dev -Denv.redis.host=127.0.0.1:6379 -Denv.nacos.server.ip=127.0.0.1 -Denv.nacos.service.namespace=erdcloud-service -DNACOS_CONFIG_GROUP=erdcloud -DNACOS_CONFIG_NAMESPACE=erdcloud -DNACOS_SERVER_ADDR=127.0.0.1:8848 -DNACOS_SERVICE_NAMESPACE=erdcloud-service -Dspring.application.name=demo
